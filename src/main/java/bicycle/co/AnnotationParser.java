@@ -18,6 +18,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
@@ -106,6 +107,7 @@ public class AnnotationParser {
     public void fetchAll() {
         List<Annotation> list = dao.findAll();
         System.out.println("Записи:");
+        list.sort((o1, o2) -> o1.getDate().compareToIgnoreCase(o2.getDate()));
         list.forEach(e -> System.out.println(String.format("%s %s: %s - %s - %s", e.getType(), e.getName(), e.getDate(),
                 e.getAuthor(), e.getComment())));
     }
