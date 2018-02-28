@@ -65,7 +65,6 @@ public class AnnotationParser {
     }
 
     public void scanForAnnotationsAndSave() {
-        String pathToJar = "C:\\project2\\annparser\\src\\main\\resources\\myapp-1.0-SNAPSHOT.jar";
 
         URL[] urls = new URL[0];
         try {
